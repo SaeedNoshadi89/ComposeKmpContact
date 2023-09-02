@@ -1,7 +1,7 @@
 plugins {
-    kotlin("multiplatform")
-    id("com.android.application")
-    id("org.jetbrains.compose")
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.compose)
+    kotlin(libs.plugins.multiplatform.get().pluginId)
 }
 
 kotlin {
@@ -16,17 +16,17 @@ kotlin {
 }
 
 android {
-    compileSdk = (findProperty("android.compileSdk") as String).toInt()
-    namespace = "com.myapplication"
+    compileSdk = libs.versions.compile.sdk.get().toInt()
+    namespace = "com.sn.composekmpcontact"
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
     defaultConfig {
-        applicationId = "com.myapplication.MyApplication"
-        minSdk = (findProperty("android.minSdk") as String).toInt()
-        targetSdk = (findProperty("android.targetSdk") as String).toInt()
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = "com.sn.composekmpcontact.ComposeKmpContact"
+        minSdk = libs.versions.min.sdk.get().toInt()
+        targetSdk = libs.versions.target.sdk.get().toInt()
+        versionCode = libs.versions.version.code.get().toInt()
+        versionName = libs.versions.version.name.get()
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

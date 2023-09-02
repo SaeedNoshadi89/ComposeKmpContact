@@ -1,4 +1,4 @@
-package com.myapplication
+package com.sn.composekmpcontact
 
 import MainView
 import android.os.Bundle

@@ -1,4 +1,4 @@
-rootProject.name = "MyApplication"
+rootProject.name = "ComposeKmpContact"
 
 include(":androidApp")
 include(":shared")
